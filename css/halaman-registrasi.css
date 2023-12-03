@@ -1,0 +1,87 @@
+/* halaman-registrasi.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.registrasi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 90%; /* Responsif untuk lebar container */
+    max-width: 400px; /* Maksimum lebar container */
+}
+
+.judul {
+    background-color: rgb(84, 120, 85);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.judul h1 {
+    margin: 0;
+}
+
+.konten {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: rgb(84, 120, 85);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d5e2f0;
+}
+
+.login-link,
+.forgot-password-link {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.login-link a,
+.forgot-password-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover,
+.forgot-password-link a:hover {
+    text-decoration: underline;
+}
