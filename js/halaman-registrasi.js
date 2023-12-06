@@ -1,41 +1,47 @@
-// halaman-registrasi.js
-
 document.addEventListener('DOMContentLoaded', function () {
   const registrationForm = document.querySelector('form');
 
   registrationForm.addEventListener('submit', function (event) {
-      event.preventDefault();
+    event.preventDefault();
 
-      const formData = new FormData(registrationForm);
-      const data = {};
-      
-      formData.forEach((value, key) => {
-          data[key] = value;
-      });
+    const formData = new FormData(registrationForm);
 
-      // Kirim data ke backend
-      sendDataToBackend(data);
-  });
+    const userData = {
+      username: formData.get('username'),
+      password: formData.get('password'),
+      nama: formData.get('nama'),
+      jenisKelamin: formData.get('jenisKelamin'),
+      telepon: formData.get('telepon'),
+      email: formData.get('email'),
+      role: parseInt(formData.get('role')),
+    };
 
-  function sendDataToBackend(data) {
-      // Ganti URL dengan endpoint backend yang sesuai
-      const backendURL = 'http://localhost:3000/register';
-
-      fetch(backendURL, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-      })
+    fetch('http://localhost:7900/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
       .then(response => response.json())
-      .then(result => {
-          console.log('Registrasi berhasil:', result);
-          // Tambahkan logika atau pengalihan halaman jika diperlukan
+      .then(data => {
+        // Menanggapi pesan dari server
+        alert(data.message);
+
+        // Clear formulir jika registrasi berhasil
+        if (data.message === 'Registrasi berhasil') {
+          registrationForm.reset();
+
+          // Redirect ke halaman registrasi setelah 2 detik
+          setTimeout(function () {
+            window.location.href = 'halaman-registrasi.html';
+          }, 2000);
+        }
       })
       .catch(error => {
-          console.error('Registrasi gagal:', error);
-          // Tambahkan penanganan kesalahan jika diperlukan
+        console.error(error);
+        // Handle kesalahan registrasi di frontend
+        alert('Registrasi gagal. Silakan coba lagi.');
       });
-  }
+  });
 });
