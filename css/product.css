@@ -139,6 +139,7 @@ header .navigation .navigation-items a:hover:before{
   border-radius: 25px;
   background: var(--primary);
   border-radius: 2px solid #000;
+  color: #fff;
 }
   .allslider .container {
     max-width: 1200px;
@@ -333,6 +334,7 @@ header .navigation .navigation-items a:hover:before{
   height: 40px;
   width: 120px;
   background: var(--primary);
+  color: #fff;
   border-radius: 10px;
   font-size: 14px;
 }
@@ -344,7 +346,279 @@ header .navigation .navigation-items a:hover:before{
   margin-top: 10px;
   border-radius: 10px;
   background: var(--primary);
+  color: #fff;
 }
+
+/* Remove default margin */
+.chat-box body,
+.chat-box h1,
+.chat-box h2,
+.chat-box h3,
+.chat-box h4,
+.chat-box p,
+.chat-box figure,
+.chat-box blockquote,
+.chat-box dl,
+.chat-box dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+.chat-box ul[role='list'],
+.chat-box ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+.chat-box {
+  line-height: 1.5;
+  background-size: 32px 32px;
+  color: #000;
+}
+
+/* A elements that don't have a class get default styles */
+.chat-box a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+.chat-box img,
+.chat-box picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+.chat-box input,
+.chat-box button,
+.chat-box textarea,
+.chat-box select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+
+
+
+/* CHATBOX */
+.chat-box .chatbox-wrapper {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width: 4rem;
+	height: 4rem;
+}
+.chat-box .chatbox-toggle {
+	width: 100%;
+	height: 100%;
+	background: #de9c29;
+	color: #fff;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: .2s;
+}
+.chat-box .chatbox-toggle:active {
+	transform: scale(.9);
+}
+.chat-box .chatbox-message-wrapper {
+	position: absolute;
+	bottom: calc(100% + 1rem);
+	right: 0;
+	width: 420px;
+	border-radius: .5rem;
+	overflow: hidden;
+	box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .1);
+	transform: scale(0);
+	transform-origin: bottom right;
+	transition: .2s;
+}
+.chat-box .chatbox-message-wrapper.show {
+	transform: scale(1);
+}
+.chat-box .chatbox-message-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #fff;
+	padding: .75rem 1.5rem;
+}
+.chat-box .chatbox-message-profile {
+	display: flex;
+	align-items: center;
+	grid-gap: .5rem;
+}
+.chat-box .chatbox-message-profile img{
+	width: 3rem;
+	height: 3rem;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.chat-box .chatbox-message-name {
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+.chat-box .chatbox-message-status {
+	font-size: .875rem;
+	color: #555;
+}
+.chat-box .chatbox-message-dropdown {
+	position: relative;
+}
+.chat-box .chatbox-message-dropdown-toggle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1.25rem;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.chat-box .chatbox-message-dropdown-toggle:hover {
+	background: #b6aaaa;
+}
+.chat-box .chatbox-message-dropdown-menu {
+	list-style: none;
+	margin: 0;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background: #fff;
+	padding: .5rem 0;
+	width: 120px;
+	box-shadow: .25rem .25rem 1.5rem rgba(0, 0, 0, .1);
+	transform: scale(0);
+	transform-origin: top right;
+	transition: .2s;
+	border-radius: .5rem;
+}
+.chat-box .chatbox-message-dropdown-menu.show {
+	transform: scale(1);
+}
+.chat-box .chatbox-message-dropdown-menu a {
+	font-size: .875rem;
+	font-weight: 500;
+	color: #000;
+	text-decoration: none;
+	padding: .5rem 1rem;
+	display: block;
+}
+.chat-box .chatbox-message-dropdown-menu a:hover {
+	background: #b1b1b1;
+}
+.chat-box .chatbox-message-content {
+	background: #d3d1d1;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	grid-row-gap: 1rem;
+	max-height: 300px;
+	overflow-y: auto;
+}
+.chat-box .chatbox-message-item {
+	width: 90%;
+	padding: 1rem;
+}
+.chat-box .chatbox-message-item.sent {
+	align-self: flex-end;
+	background: var(--primary);
+	color: #fff;
+	border-radius: .75rem 0 .75rem .75rem;
+}
+.chat-box .chatbox-message-item.received {
+	background: #fff;
+	border-radius: 0 .75rem .75rem .75rem;
+	box-shadow: .25rem .25rem 1.5rem rgba(0, 0, 0, .05);
+}
+.chat-box .chatbox-message-item-time {
+	float: right;
+	font-size: .75rem;
+	margin-top: .5rem;
+	display: inline-block;
+}
+.chat-box .chatbox-message-bottom {
+	background:#fff;
+	padding: .75rem 1.5rem;
+}
+.chat-box .chatbox-message-form {
+	display: flex;
+	align-items: center;
+	background: #e6e4e4;
+	border-radius: .5rem;
+	padding: .5rem 1.25rem;
+}
+.chat-box .chatbox-message-input {
+	background: transparent;
+	outline: none;
+	border: none;
+	resize: none;
+	scrollbar-width: none;
+}
+.chat-box .chatbox-message-input::-webkit-scrollbar {
+	display: none;
+}
+.chat-box .chatbox-message-submit {
+	font-size: 1.25rem;
+	color: var(--primary);
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+  margin-left: 50%;
+}
+.chat-box .chatbox-message-no-message {
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: center;
+}
+/* CHATBOX */
+
+
+
+
+
+
+
+/* BREAKPOINTS */
+@media screen and (max-width: 576px) {
+	.chat-box .chatbox-message-wrapper {
+		width: calc(100vw - 2rem);
+	}
+	.chat-box .chatbox-wrapper {
+		bottom: 1rem;
+		right: 1rem;
+	}
+}
+/* BREAKPOINTS */
+
+
 
   /* Styles for mobile and tablets */
   @media only screen and (max-width: 1023px) {
