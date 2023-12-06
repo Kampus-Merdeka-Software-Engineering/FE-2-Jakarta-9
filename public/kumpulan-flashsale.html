@@ -1,0 +1,2697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOST JABODETABEK</title>
+    <link rel="stylesheet" href="css/kumpulan-timer.css">
+    <link rel="stylesheet" href="css/kumpulan-flashsale.css">
+    <script src="js/kumpulan-flashsale.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+
+    <header>  
+        <a href="#" class="brand">Kostku Revou</a>
+        <div class="menu-btn">
+         <i class="fa-solid fa-bars"></i>
+      </div>
+        
+        <div class="navigation">
+            <div class="navigation-items">
+               <a href="#">Home</a>
+               <a href="#">Flashsale</a>
+               <a href="#">Product</a>
+               <a href="#">Login</i></a>
+               <a href="#">About Us</a>
+            </div>
+        </div>  
+    
+    </header>
+
+<section class="cover">
+    <div class="container">
+        <div id="slide">
+            <div class="item" style="background-image: url(assets/kota\ \(1\).png);">
+                <div class="content">
+                    <div class="name">BEKASI</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor cupiditate, esse quasi eligendi cumque suscipit labore soluta alias atque tempore.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            
+            <div class="item" style="background-image: url(assets/kota\ \(1\).jpg);">
+                <div class="content">
+                    <div class="name">JAKARTA</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fuga, odio est cupiditate consequuntur velit possimus error dolorem ducimus aspernatur?</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(assets/kota\ \(2\).jpg);">
+                <div class="content">
+                    <div class="name">BOGOR</div>
+                    <div class="des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab modi nulla quam nam, eligendi eaque! Similique culpa impedit voluptates unde.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(assets/kota\ \(1\).webp);">
+                <div class="content">
+                    <div class="name">DEPOK</div>
+                    <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente perspiciatis similique numquam asperiores repudiandae tenetur, vero distinctio consequatur alias maxime.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(assets/kota.jpg);">
+                <div class="content">
+                    <div class="name">TANGERANG</div>
+                    <div class="des">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores suscipit commodi enim id. Quod atque perspiciatis, corrupti fugit rem quibusdam.</div>
+                    <button>See more</button>
+                </div>
+            </div>
+           
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<section class="search-bar">
+<div class="search-box">
+    <input type="text" placeholder="Mau cari apa?">
+    <div class="search-icon">
+      <i class="fas fa-search"></i>
+    </div>
+<div class="cancel-icon">
+      <i class="fas fa-times"></i>
+    </div>
+<div class="search-data">
+</div>
+</div>
+<script>
+    const searchBox = document.querySelector(".search-box");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const searchInput = document.querySelector("input");
+    const searchData = document.querySelector(".search-data");
+    searchBtn.onclick =()=>{
+      searchBox.classList.add("active");
+      searchBtn.classList.add("active");
+      searchInput.classList.add("active");
+      cancelBtn.classList.add("active");
+      searchInput.focus();
+      if(searchInput.value != ""){
+        var values = searchInput.value;
+        searchData.classList.remove("active");
+        searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+      }else{
+        searchData.textContent = "";
+      }
+    }
+    cancelBtn.onclick =()=>{
+      searchBox.classList.remove("active");
+      searchBtn.classList.remove("active");
+      searchInput.classList.remove("active");
+      cancelBtn.classList.remove("active");
+      searchData.classList.toggle("active");
+      searchInput.value = "";
+    }
+  </script>
+</section>
+
+<section class="timer">
+       <h1>FLASHSALE &nbsp;<i class="fa-solid fa-bolt-lightning"></i></h1>
+       <div class="countdown">
+   <div class="timer">
+       <div id="flipdown" class="flipdown"></div>
+   </div>
+</div>
+
+   <script>
+       document.addEventListener('DOMContentLoaded', () => {
+           let timer_ = 1708417635//unix timestamp
+           let flipdown = new FlipDown(timer_)
+               .start()
+               .ifEnded(() => {
+                   document.querySelector(".flipdown").innerHTML = `<h2>Timer is ended</h2>`;
+               })
+       })
+   </script>
+</section>
+
+<section class="flashsale">
+
+    <div class="container-flash">
+    
+       <h1 class="heading">JAKARTA</h1>
+    
+       <div class="box-container">
+    
+          <div class="box">
+             <div class="head">
+                <div class="blur"><img src="assets/kost-2.jpg" alt=""></div>
+             <div class="image">
+                <img src="assets/bu ratna.jpg" alt="">
+             </div>
+          </div>
+    
+          <div class="meta">
+             <h2>Kost Bu Ratna XIXIXI</h2>
+             <p>Lokasi</p>
+           </div>
+           
+           <div class="main">
+             <div class="content">
+                <strong>About</strong>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                
+             </div>
+    
+                <div class="icons">
+                   <ul>
+                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                      <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                   </ul>
+                </div>
+    
+                <div class="pricelist">
+                <div class="price">
+                <strong>IDR 2.000.000</strong>
+                <span>20<br>Penyewa</span>
+            </div>
+            </div>
+            
+            <div class="button">
+             <a href="#">
+                 <span></span>
+                 Rent!
+                 <span></span>
+             </a>
+         </div>
+    
+        </div>
+          
+    
+    
+       </div>
+    
+       <div class="box">
+          <div class="head">
+             <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+          <div class="image">
+             <img src="images/img-1.jpg" alt="">
+          </div>
+       </div>
+    
+       <div class="meta">
+          <h2>Kost Bu Ratna XIXIXI</h2>
+          <p>Lokasi</p>
+        </div>
+        
+        <div class="main">
+          <div class="content">
+             <strong>About</strong>
+             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+             
+          </div>
+    
+             <div class="icons">
+                <ul>
+                   <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                   <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                   <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                   <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                </ul>
+             </div>
+    
+             <div class="pricelist">
+             <div class="price">
+             <strong>IDR 2.000.000</strong>
+             <span>20<br>Penyewa</span>
+         </div>
+         </div>
+         
+         <div class="button">
+          <a href="#">
+              <span></span>
+              Rent!
+              <span></span>
+          </a>
+      </div>
+    
+     </div>
+    
+    </div>
+    
+    <div class="box">
+       <div class="head">
+          <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+       <div class="image">
+          <img src="images/img-1.jpg" alt="">
+       </div>
+    </div>
+    
+    <div class="meta">
+       <h2>Kost Bu Ratna XIXIXI</h2>
+       <p>Lokasi</p>
+     </div>
+     
+     <div class="main">
+       <div class="content">
+          <strong>About</strong>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+          
+       </div>
+    
+          <div class="icons">
+             <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+             </ul>
+          </div>
+    
+          <div class="pricelist">
+          <div class="price">
+          <strong>IDR 2.000.000</strong>
+          <span>20<br>Penyewa</span>
+      </div>
+      </div>
+      
+      <div class="button">
+       <a href="#">
+           <span></span>
+           Rent!
+           <span></span>
+       </a>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <div class="box">
+       <div class="head">
+          <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+       <div class="image">
+          <img src="images/img-1.jpg" alt="">
+       </div>
+    </div>
+    
+    <div class="meta">
+       <h2>Kost Bu Ratna XIXIXI</h2>
+       <p>Lokasi</p>
+     </div>
+     
+     <div class="main">
+       <div class="content">
+          <strong>About</strong>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+          
+       </div>
+    
+          <div class="icons">
+             <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+             </ul>
+          </div>
+    
+          <div class="pricelist">
+          <div class="price">
+          <strong>IDR 2.000.000</strong>
+          <span>20<br>Penyewa</span>
+      </div>
+      </div>
+      
+      <div class="button">
+       <a href="#">
+           <span></span>
+           Rent!
+           <span></span>
+       </a>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <div class="box">
+       <div class="head">
+          <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+       <div class="image">
+          <img src="images/img-1.jpg" alt="">
+       </div>
+    </div>
+    
+    <div class="meta">
+       <h2>Kost Bu Ratna XIXIXI</h2>
+       <p>Lokasi</p>
+     </div>
+     
+     <div class="main">
+       <div class="content">
+          <strong>About</strong>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+          
+       </div>
+    
+          <div class="icons">
+             <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+             </ul>
+          </div>
+    
+          <div class="pricelist">
+          <div class="price">
+          <strong>IDR 2.000.000</strong>
+          <span>20<br>Penyewa</span>
+      </div>
+      </div>
+      
+      <div class="button">
+       <a href="#">
+           <span></span>
+           Rent!
+           <span></span>
+       </a>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <div class="box">
+       <div class="head">
+          <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+       <div class="image">
+          <img src="images/img-1.jpg" alt="">
+       </div>
+    </div>
+    
+    <div class="meta">
+       <h2>Kost Bu Ratna XIXIXI</h2>
+       <p>Lokasi</p>
+     </div>
+     
+     <div class="main">
+       <div class="content">
+          <strong>About</strong>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+          
+       </div>
+    
+          <div class="icons">
+             <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+             </ul>
+          </div>
+    
+          <div class="pricelist">
+          <div class="price">
+          <strong>IDR 2.000.000</strong>
+          <span>20<br>Penyewa</span>
+      </div>
+      </div>
+      
+      <div class="button">
+       <a href="#">
+           <span></span>
+           Rent!
+           <span></span>
+       </a>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <div class="box">
+       <div class="head">
+          <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+       <div class="image">
+          <img src="images/img-1.jpg" alt="">
+       </div>
+    </div>
+    
+    <div class="meta">
+       <h2>Kost Bu Ratna XIXIXI</h2>
+       <p>Lokasi</p>
+     </div>
+     
+     <div class="main">
+       <div class="content">
+          <strong>About</strong>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+          
+       </div>
+    
+          <div class="icons">
+             <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+             </ul>
+          </div>
+    
+          <div class="pricelist">
+          <div class="price">
+          <strong>IDR 2.000.000</strong>
+          <span>20<br>Penyewa</span>
+      </div>
+      </div>
+      
+      <div class="button">
+       <a href="#">
+           <span></span>
+           Rent!
+           <span></span>
+       </a>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <div class="box">
+       <div class="head">
+          <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+       <div class="image">
+          <img src="images/img-1.jpg" alt="">
+       </div>
+    </div>
+    
+    <div class="meta">
+       <h2>Kost Bu Ratna XIXIXI</h2>
+       <p>Lokasi</p>
+     </div>
+     
+     <div class="main">
+       <div class="content">
+          <strong>About</strong>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+          
+       </div>
+    
+          <div class="icons">
+             <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+             </ul>
+          </div>
+    
+          <div class="pricelist">
+          <div class="price">
+          <strong>IDR 2.000.000</strong>
+          <span>20<br>Penyewa</span>
+      </div>
+      </div>
+      
+      <div class="button">
+       <a href="#">
+           <span></span>
+           Rent!
+           <span></span>
+       </a>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <div class="box">
+       <div class="head">
+          <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+       <div class="image">
+          <img src="images/img-1.jpg" alt="">
+       </div>
+    </div>
+    
+    <div class="meta">
+       <h2>Kost Bu Ratna XIXIXI</h2>
+       <p>Lokasi</p>
+     </div>
+     
+     <div class="main">
+       <div class="content">
+          <strong>About</strong>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+          
+       </div>
+    
+          <div class="icons">
+             <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+             </ul>
+          </div>
+    
+          <div class="pricelist">
+          <div class="price">
+          <strong>IDR 2.000.000</strong>
+          <span>20<br>Penyewa</span>
+      </div>
+      </div>
+      
+      <div class="button">
+       <a href="#">
+           <span></span>
+           Rent!
+           <span></span>
+       </a>
+    </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+       </div>
+    
+       <div id="load-more1" class="load more"> load more </div>
+    
+    </div>
+    
+    <script>
+    
+    let loadMoreBtn = document.querySelector('#load-more1');
+    let currentItem = 3;
+    
+    loadMoreBtn.onclick = () =>{
+       let boxes = [...document.querySelectorAll('.container-flash .box-container .box')];
+       for (var i = currentItem; i < currentItem + 3; i++){
+          boxes[i].style.display = 'inline-block';
+       }
+       currentItem += 3;
+    
+       if(currentItem >= boxes.length){
+          loadMoreBtn.style.display = 'none';
+       }
+    }
+    
+    </script>
+
+</section>
+
+
+<section class="flashsale2">
+
+   <div class="container-flash2">
+   
+      <h1 class="heading">BOGOR</h1>
+   
+      <div class="box-container2">
+   
+         <div class="box2">
+            <div class="head">
+               <div class="blur"><img src="assets/kost-2.jpg" alt=""></div>
+            <div class="image">
+               <img src="assets/bu ratna.jpg" alt="">
+            </div>
+         </div>
+   
+         <div class="meta">
+            <h2>Kost Bu Ratna XIXIXI</h2>
+            <p>Lokasi</p>
+          </div>
+          
+          <div class="main">
+            <div class="content">
+               <strong>About</strong>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+               
+            </div>
+   
+               <div class="icons">
+                  <ul>
+                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                     <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                  </ul>
+               </div>
+   
+               <div class="pricelist">
+               <div class="price">
+               <strong>IDR 2.000.000</strong>
+               <span>20<br>Penyewa</span>
+           </div>
+           </div>
+           
+           <div class="button">
+            <a href="#">
+                <span></span>
+                Rent!
+                <span></span>
+            </a>
+        </div>
+   
+       </div>
+         
+   
+   
+      </div>
+   
+      <div class="box2">
+         <div class="head">
+            <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+         <div class="image">
+            <img src="images/img-1.jpg" alt="">
+         </div>
+      </div>
+   
+      <div class="meta">
+         <h2>Kost Bu Ratna XIXIXI</h2>
+         <p>Lokasi</p>
+       </div>
+       
+       <div class="main">
+         <div class="content">
+            <strong>About</strong>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+            
+         </div>
+   
+            <div class="icons">
+               <ul>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+               </ul>
+            </div>
+   
+            <div class="pricelist">
+            <div class="price">
+            <strong>IDR 2.000.000</strong>
+            <span>20<br>Penyewa</span>
+        </div>
+        </div>
+        
+        <div class="button">
+         <a href="#">
+             <span></span>
+             Rent!
+             <span></span>
+         </a>
+     </div>
+   
+    </div>
+   
+   </div>
+   
+   <div class="box2">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box2">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box2">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box2">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box2">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box2">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box2">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+      </div>
+   
+      <div id="load-more2"> load more </div>
+   
+   </div>
+   
+   <script>
+   
+   let loadMoreBtn2 = document.querySelector('#load-more2');
+   let currentItem2 = 3;
+   
+   loadMoreBtn2.onclick = () =>{
+      let boxes = [...document.querySelectorAll('.container-flash2 .box-container2 .box2')];
+      for (var i = currentItem2; i < currentItem2 + 3; i++){
+         boxes[i].style.display = 'inline-block';
+      }
+      currentItem2 += 3;
+   
+      if(currentItem2 >= boxes.length){
+         loadMoreBtn2.style.display = 'none';
+      }
+   }
+   
+   </script>
+
+</section>
+
+
+<section class="flashsale3">
+
+   <div class="container-flash3">
+   
+      <h1 class="heading">DEPOK</h1>
+   
+      <div class="box-container3">
+   
+         <div class="box3">
+            <div class="head">
+               <div class="blur"><img src="assets/kost-2.jpg" alt=""></div>
+            <div class="image">
+               <img src="assets/bu ratna.jpg" alt="">
+            </div>
+         </div>
+   
+         <div class="meta">
+            <h2>Kost Bu Ratna XIXIXI</h2>
+            <p>Lokasi</p>
+          </div>
+          
+          <div class="main">
+            <div class="content">
+               <strong>About</strong>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+               
+            </div>
+   
+               <div class="icons">
+                  <ul>
+                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                     <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                  </ul>
+               </div>
+   
+               <div class="pricelist">
+               <div class="price">
+               <strong>IDR 2.000.000</strong>
+               <span>20<br>Penyewa</span>
+           </div>
+           </div>
+           
+           <div class="button">
+            <a href="#">
+                <span></span>
+                Rent!
+                <span></span>
+            </a>
+        </div>
+   
+       </div>
+         
+   
+   
+      </div>
+   
+      <div class="box3">
+         <div class="head">
+            <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+         <div class="image">
+            <img src="images/img-1.jpg" alt="">
+         </div>
+      </div>
+   
+      <div class="meta">
+         <h2>Kost Bu Ratna XIXIXI</h2>
+         <p>Lokasi</p>
+       </div>
+       
+       <div class="main">
+         <div class="content">
+            <strong>About</strong>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+            
+         </div>
+   
+            <div class="icons">
+               <ul>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+               </ul>
+            </div>
+   
+            <div class="pricelist">
+            <div class="price">
+            <strong>IDR 2.000.000</strong>
+            <span>20<br>Penyewa</span>
+        </div>
+        </div>
+        
+        <div class="button">
+         <a href="#">
+             <span></span>
+             Rent!
+             <span></span>
+         </a>
+     </div>
+   
+    </div>
+   
+   </div>
+   
+   <div class="box3">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box3">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box3">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box3">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box3">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box3">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box3">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+      </div>
+   
+      <div id="load-more3" class="load more"> load more </div>
+   
+   </div>
+   
+   <script>
+   
+   let loadMoreBtn3 = document.querySelector('#load-more3');
+   let currentItem3 = 3;
+   
+   loadMoreBtn3.onclick = () =>{
+      let boxes = [...document.querySelectorAll('.container-flash3 .box-container3 .box3')];
+      for (var i = currentItem3; i < currentItem3 + 3; i++){
+         boxes[i].style.display = 'inline-block';
+      }
+      currentItem3 += 3;
+   
+      if(currentItem3 >= boxes.length){
+         loadMoreBtn3.style.display = 'none';
+      }
+   }
+   
+   </script>
+
+</section>
+
+<section class="flashsale4">
+
+   <div class="container-flash4">
+   
+      <h1 class="heading">TANGERANG</h1>
+   
+      <div class="box-container4">
+   
+         <div class="box4">
+            <div class="head">
+               <div class="blur"><img src="assets/kost-2.jpg" alt=""></div>
+            <div class="image">
+               <img src="assets/bu ratna.jpg" alt="">
+            </div>
+         </div>
+   
+         <div class="meta">
+            <h2>Kost Bu Ratna XIXIXI</h2>
+            <p>Lokasi</p>
+          </div>
+          
+          <div class="main">
+            <div class="content">
+               <strong>About</strong>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+               
+            </div>
+   
+               <div class="icons">
+                  <ul>
+                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                     <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                  </ul>
+               </div>
+   
+               <div class="pricelist">
+               <div class="price">
+               <strong>IDR 2.000.000</strong>
+               <span>20<br>Penyewa</span>
+           </div>
+           </div>
+           
+           <div class="button">
+            <a href="#">
+                <span></span>
+                Rent!
+                <span></span>
+            </a>
+        </div>
+   
+       </div>
+         
+   
+   
+      </div>
+   
+      <div class="box4">
+         <div class="head">
+            <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+         <div class="image">
+            <img src="images/img-1.jpg" alt="">
+         </div>
+      </div>
+   
+      <div class="meta">
+         <h2>Kost Bu Ratna XIXIXI</h2>
+         <p>Lokasi</p>
+       </div>
+       
+       <div class="main">
+         <div class="content">
+            <strong>About</strong>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+            
+         </div>
+   
+            <div class="icons">
+               <ul>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+               </ul>
+            </div>
+   
+            <div class="pricelist">
+            <div class="price">
+            <strong>IDR 2.000.000</strong>
+            <span>20<br>Penyewa</span>
+        </div>
+        </div>
+        
+        <div class="button">
+         <a href="#">
+             <span></span>
+             Rent!
+             <span></span>
+         </a>
+     </div>
+   
+    </div>
+   
+   </div>
+   
+   <div class="box4">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box4">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box4">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box4">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box4">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box4">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box4">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+      </div>
+   
+      <div id="load-more4" class="load more"> load more </div>
+   
+   </div>
+   
+   <script>
+   
+   let loadMoreBtn4 = document.querySelector('#load-more4');
+   let currentItem4 = 3;
+   
+   loadMoreBtn4.onclick = () =>{
+      let boxes = [...document.querySelectorAll('.container-flash4 .box-container4 .box4')];
+      for (var i = currentItem4; i < currentItem4 + 3; i++){
+         boxes[i].style.display = 'inline-block';
+      }
+      currentItem4 += 3;
+   
+      if(currentItem4 >= boxes.length){
+         loadMoreBtn4.style.display = 'none';
+      }
+   }
+   
+   </script>
+
+</section>
+
+<section class="flashsale5">
+
+   <div class="container-flash5">
+   
+      <h1 class="heading">BEKASI</h1>
+   
+      <div class="box-container5">
+   
+         <div class="box5">
+            <div class="head">
+               <div class="blur"><img src="assets/kost-2.jpg" alt=""></div>
+            <div class="image">
+               <img src="assets/bu ratna.jpg" alt="">
+            </div>
+         </div>
+   
+         <div class="meta">
+            <h2>Kost Bu Ratna XIXIXI</h2>
+            <p>Lokasi</p>
+          </div>
+          
+          <div class="main">
+            <div class="content">
+               <strong>About</strong>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+               
+            </div>
+   
+               <div class="icons">
+                  <ul>
+                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                     <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                     <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                  </ul>
+               </div>
+   
+               <div class="pricelist">
+               <div class="price">
+               <strong>IDR 2.000.000</strong>
+               <span>20<br>Penyewa</span>
+           </div>
+           </div>
+           
+           <div class="button">
+            <a href="#">
+                <span></span>
+                Rent!
+                <span></span>
+            </a>
+        </div>
+   
+       </div>
+         
+   
+   
+      </div>
+   
+      <div class="box5">
+         <div class="head">
+            <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+         <div class="image">
+            <img src="images/img-1.jpg" alt="">
+         </div>
+      </div>
+   
+      <div class="meta">
+         <h2>Kost Bu Ratna XIXIXI</h2>
+         <p>Lokasi</p>
+       </div>
+       
+       <div class="main">
+         <div class="content">
+            <strong>About</strong>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+            
+         </div>
+   
+            <div class="icons">
+               <ul>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+               </ul>
+            </div>
+   
+            <div class="pricelist">
+            <div class="price">
+            <strong>IDR 2.000.000</strong>
+            <span>20<br>Penyewa</span>
+        </div>
+        </div>
+        
+        <div class="button">
+         <a href="#">
+             <span></span>
+             Rent!
+             <span></span>
+         </a>
+     </div>
+   
+    </div>
+   
+   </div>
+   
+   <div class="box5">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box5">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box5">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box5">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box5">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box5">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+   <div class="box5">
+      <div class="head">
+         <div class="blur"><img src="assets/kost-1.jpg" alt=""></div>
+      <div class="image">
+         <img src="images/img-1.jpg" alt="">
+      </div>
+   </div>
+   
+   <div class="meta">
+      <h2>Kost Bu Ratna XIXIXI</h2>
+      <p>Lokasi</p>
+    </div>
+    
+    <div class="main">
+      <div class="content">
+         <strong>About</strong>
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+         
+      </div>
+   
+         <div class="icons">
+            <ul>
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+         </div>
+   
+         <div class="pricelist">
+         <div class="price">
+         <strong>IDR 2.000.000</strong>
+         <span>20<br>Penyewa</span>
+     </div>
+     </div>
+     
+     <div class="button">
+      <a href="#">
+          <span></span>
+          Rent!
+          <span></span>
+      </a>
+   </div>
+   
+   </div>
+   
+   
+   
+   
+   </div>
+   
+      </div>
+   
+      <div id="load-more5" class="load more"> load more </div>
+   
+   </div>
+   
+   <script>
+   
+   let loadMoreBtn5 = document.querySelector('#load-more5');
+   let currentItem5 = 3;
+   
+   loadMoreBtn5.onclick = () =>{
+      let boxes = [...document.querySelectorAll('.container-flash5 .box-container5 .box5')];
+      for (var i = currentItem5; i < currentItem5 + 3; i++){
+         boxes[i].style.display = 'inline-block';
+      }
+      currentItem5 += 3;
+   
+      if(currentItem5 >= boxes.length){
+         loadMoreBtn5.style.display = 'none';
+      }
+   }
+   
+   </script>
+
+</section>
+
+<section class="chat-box">
+	<div class="chatbox-wrapper">
+		<div class="chatbox-toggle">
+			<i class='bx bx-message-dots'></i>
+		</div>
+		<div class="chatbox-message-wrapper">
+			<div class="chatbox-message-header">
+				<div class="chatbox-message-profile">
+					<img src="assets/logo3.png">
+					<div>
+						<h4 class="chatbox-message-name">Kost-Ku</h4>
+						<p class="chatbox-message-status">Hi User!</p>
+					</div>
+				</div>
+				<div class="chatbox-message-dropdown">
+					<i class='bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle'></i>
+					<ul class="chatbox-message-dropdown-menu">
+						<li>
+							<a href="#">Search</a>
+						</li>
+						<li>
+							<a href="#">Report</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="chatbox-message-content">
+				<h4 class="chatbox-message-no-message">You don't have message yet!</h4>
+				<!-- <div class="chatbox-message-item sent">
+					<span class="chatbox-message-item-text">
+						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
+					</span>
+					<span class="chatbox-message-item-time">08:30</span>
+				</div>
+				<div class="chatbox-message-item received">
+					<span class="chatbox-message-item-text">
+						Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Quod, fugiat?
+					</span>
+					<span class="chatbox-message-item-time">08:30</span>
+				</div> -->
+			</div>
+			<div class="chatbox-message-bottom">
+				<form action="#" class="chatbox-message-form">
+					<textarea rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
+					<button type="submit" class="chatbox-message-submit"><i class='bx bx-send' ></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="footer">
+   <div class="allfooter">
+   <div class="container">
+       <div class="sec aboutus">
+           <h2>About Us</h2>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium minima hic exercitationem fuga dolore? Illum, dolores nesciunt? Porro, eaque officia.</p>
+           <ul class="sci">
+               <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+           </ul>
+       </div>
+       <div class="sec quicklinks">
+           <h2>Support</h2>
+           <ul>
+               <li><a href="#">FAQ</a></li>
+               <li><a href="#">Privacy Police</a></li>
+               <li><a href="#">Help</a></li>
+               <li><a href="#">Contact</a></li>
+           </ul>
+       </div>
+       <div class="sec contact">
+           <h2>Contact</h2>
+           <ul class="info">
+               <li><span><i class="fa-solid fa-phone"></i></span><p>02x-xxx-xxx</p></li>
+               <li><span><i class="fa-solid fa-envelope"></i></span><p>you@mail.co.id</p></li>
+               <li><span><i class="fa-brands fa-telegram"></i></span><p>@kost-ku</p></li>
+           </ul>
+       </div>
+       <div class="sec logo">
+           <img src="assets/logo4.png" alt="" class="">
+       </div>
+   </div>
+</div>
+</footer>
+
+
+<div class="copyrightText">
+   <p>Copyright ©2023 Kost-ku. All Right Reserved</p>
+</div>
+
+
+
+
+    <script src="js/kumpulan-flashsale.js"></script>
+</body>
+</html>
+  
