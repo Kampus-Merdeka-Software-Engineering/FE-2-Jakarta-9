@@ -22,12 +22,18 @@
                 </div>
                 <div class="content">
                     <!-- Form login dengan checkbox -->
-                    <form action="#" method="POST">
+                    <form id="loginForm" method="post" >
                         <label for="username">Username:</label>
                         <input type="text" id="username" name="username" required>
                         
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" required>
+
+                        <label for="role">Sebagai :</label>
+    <select id="role" name="role" required>
+        <option value="1">Pemilik</option>
+        <option value="2">Penyewa</option>
+    </select>
                         
                         <label for="remember">
                             <input type="checkbox" id="remember" name="remember"> Remember me
