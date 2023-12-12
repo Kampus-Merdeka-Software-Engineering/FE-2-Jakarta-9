@@ -1,32 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const loginForm = document.getElementById('loginForm');
+// halaman-login.js
+const loginForm = document.getElementById('loginForm');
 
-  loginForm.addEventListener('submit', async function (event) {
-    event.preventDefault();  // Mencegah formulir untuk melakukan submit bawaan
+loginForm.addEventListener('submit', async function (event) {
+  event.preventDefault();
 
-    try {
-      await login();  // Panggil fungsi login() di sini
-    } catch (error) {
-      console.error('Terjadi kesalahan saat login:', error.message);
-    }
-  });
-});
+  const formData = new FormData(loginForm);
 
-async function login() {
-  
-  const usernameInput = document.getElementById('username');
-  const passwordInput = document.getElementById('password');
-  const roleInput = document.getElementById('role');
-
-  const username = usernameInput.value;
-  const password = passwordInput.value;
-  const role = roleInput.value;
-
-  // Validasi input
-  if (!username || !password || !role) {
-    console.error('Harap lengkapi semua kolom');
-    return;
-  }
+  const userData = {
+    username: formData.get('username'),
+    password: formData.get('password'),
+    role: parseInt(formData.get('role'), 10),
+  };
 
   try {
     const response = await fetch('http://localhost:7900/api/login', {
@@ -34,27 +18,29 @@ async function login() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password, role }),
+      body: JSON.stringify(userData),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      // Handle kesalahan HTTP (contoh: 404 Not Found, 500 Internal Server Error, dll.)
-      const errorMessage = await response.json();
-      console.error(`Login gagal: ${errorMessage.message}`);
-      return;
+      throw new Error(data.error || 'Gagal login. Silakan coba lagi.');
     }
 
-    const userData = await response.json();
+    console.log('Token:', data.token);
+    console.log('UserId:', data.userId);
+    console.log('Role:', data.role);
 
-    // Redirect sesuai peran pengguna
-    if (userData.redirect) {
-      window.location.href = userData.redirect;
+    // Redirect ke dashboard berdasarkan role
+    if (data.role === '1') {
+      window.location.href = '/dashboard-pemilik.html';
+    } else if (data.role === '2') {
+      window.location.href = '/dashboard-penyewa.html';
     } else {
-      // Handle peran tidak valid
-      console.error('Peran pengguna tidak valid');
+      // Handle role lainnya jika diperlukan
     }
   } catch (error) {
-    // Handle kesalahan selama proses fetch atau parsing JSON
-    console.error('Terjadi kesalahan:', error.message);
+    console.error(error);
+    alert(error.message || 'Gagal login. Silakan coba lagi.');
   }
-}
+});
