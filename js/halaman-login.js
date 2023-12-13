@@ -33,7 +33,7 @@ loginForm.addEventListener('submit', async function (event) {
 
     // Redirect ke dashboard berdasarkan role
     if (data.role === '1') {
-      window.location.href = '/dashboard-pemilik.html';
+      window.location.href = '/dashboard.html';
     } else if (data.role === '2') {
       window.location.href = '/dashboard-penyewa.html';
     } else {
